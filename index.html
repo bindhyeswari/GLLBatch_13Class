@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+
+        }
+        div.container {
+            min-height: 5em;
+            padding: 1em;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            width: 60%;
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script>
+        $(function (){
+            // create a div, apply some html, apply a class and append it to body
+
+            // $('<input>').attr('data-name', 'Sindura').appendTo(document.body);
+            // console.log($(document.body.firstElementChild).hasClass('container'));
+            $('div')[0].innerHTML = 'asdf';
+
+            var inputTypes =  ["button", "checkbox", "color", "date", "datetime", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"];
+            inputTypes.forEach(function (elem){
+               $('<input>').attr('type', elem).appendTo(document.body);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
