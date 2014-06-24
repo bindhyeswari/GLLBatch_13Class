@@ -56,14 +56,15 @@
             $('table').css('display', 'none');
 
             // creating multiple input types and setting them up
-            for (i = 0; i < attributes.length; i++) {
+            /*for (i = 0; i < attributes.length; i++) {
                 var div = $('<div>').appendTo(document.body);
                 $('<span>').html(attributes[i]).appendTo(div);
                 $('<input>').attr('type', attributes[i]).appendTo(div);
-            }
+            }*/
 
+            $('<form>').attr('id', 'form1').appendTo(document.body);
             attributes.forEach(function (attribute){
-                var div = $('<div>').appendTo(document.body);
+                var div = $('<div>').appendTo('#form1');
                 $('<span>').html(attribute).appendTo(div);
                 $('<input>').attr('type', attribute).appendTo(div);
             });
@@ -73,6 +74,7 @@
     </script>
 </head>
 <body>
+<input type="date"/>
 <table class="reference notranslate">
     <tbody><tr>
         <th style="width:22%">Value</th>
