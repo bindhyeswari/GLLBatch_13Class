@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: #ff5c4d;
+            color: #3d0000;
+            text-shadow: 1px 1px 1px #ffbeb4;
+            font: 300 1em 'Helvetica Neue';
+
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function (){
+            document.body.addEventListener('click', function (event){
+                console.log(event);
+                document.body.innerHTML = '';
+                // write a loop to enumerate all properties of the event object
+                var valid_types = 'number, string, boolean';
+                for (var prop in event) {
+                    var t = typeof event[prop];
+                    // console.log(t + ': ' + valid_types.contains(t));
+                    // console.log(typeof event[prop]);
+                    if (valid_types.contains(typeof event[prop])) {
+                        var div = document.createElement('div');
+                        div.innerHTML = prop + ': ' + event[prop];
+                        document.body.appendChild(div);
+                    }
+
+                }
+
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

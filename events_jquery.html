@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: #ff5c4d;
+            color: #3d0000;
+            text-shadow: 1px 1px 1px #ffbeb4;
+            font: 300 1em 'Helvetica Neue';
+
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script>
+        $(function (){
+            $(document.body).click(function (event){
+                console.log(event.originalEvent);
+                var valid_types = 'string, number, boolean';
+
+                // reset all the body information
+                $(document.body).html('');
+
+                for (var prop in event.originalEvent) {
+                    var type_value = typeof event.originalEvent[prop];
+                    if (valid_types.contains(type_value))
+                        $('<div>').html(
+                                        prop + ': ' + event.originalEvent[prop]
+                                        /*type_value*/
+                        ).appendTo(document.body);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

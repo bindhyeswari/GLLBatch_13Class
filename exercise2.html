@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        html, body {
+            height: 100%;
+            background-color: white;
+            cursor: crosshair;
+        }
+        div#display_location {
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #555;
+            text-shadow: 1px 1px 1px #eee;
+        }
+    </style>
+    <title></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function (){
+            var div = document.getElementById('display_location');
+            document.body.addEventListener('mousemove', function (event){
+               
+                div.innerHTML = event.clientX + '    ' + event.clientY;
+                div.style.left = event.clientX + 10 + 'px';
+                div.style.top = event.clientY + 10 + 'px';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="display_location">
+
+    </div>
+
+</body>
+</html>
